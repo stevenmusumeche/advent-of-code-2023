@@ -1,0 +1,19 @@
+{
+  "name": "advent-of-code-2023",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch ./src/runner.ts"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "commander": "^11.1.0",
+    "prettier": "^3.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
