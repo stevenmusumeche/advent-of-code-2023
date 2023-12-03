@@ -1,5 +1,5 @@
 import { fileToStringArray } from "../common";
-import invariant from "../common/utils";
+import { invariant } from "../common/utils";
 
 const MAX_WORD_LENGTH = 5;
 

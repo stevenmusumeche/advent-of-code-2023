@@ -1,4 +1,4 @@
-import invariant from "../common/utils";
+import { invariant } from "../common/utils";
 
 export type Color = "blue" | "red" | "green";
 export type GameSet = Record<Color, number>;

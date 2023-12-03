@@ -1,6 +1,6 @@
 const prefix: string = "Invariant failed";
 
-export default function invariant(
+export function invariant(
   condition: any,
   message?: string | (() => string),
 ): asserts condition {
@@ -14,3 +14,32 @@ export default function invariant(
   const value: string = provided ? `${prefix}: ${provided}` : prefix;
   throw new Error(value);
 }
+
+export function printGrid<T extends { toString: () => string } = string>(
+  grid: Grid<T>,
+): void {
+  for (let r = 0; r < grid.length; r++) {
+    console.log(grid[r].map((x) => x.toString()).join(" "));
+  }
+}
+
+export function coordinateValue(grid: Grid<string>, coordinate: Coordinate) {
+  return (
+    grid[coordinate.row][coordinate.column] ??
+    invariant("no value for coordinate " + coordinate)
+  );
+}
+
+export type Coordinate = { row: number; column: number };
+export type Grid<T> = T[][];
+
+export type RichGrid = RichCoordinate[][];
+
+export type RichCoordinate = {
+  coordinate: Coordinate;
+  value: string;
+  type: SymbolType;
+  toString: () => string;
+};
+
+export type SymbolType = "digit" | "symbol" | "empty";

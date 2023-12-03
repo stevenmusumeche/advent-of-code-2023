@@ -1,5 +1,5 @@
 import { fileToStringArray } from "../common";
-import invariant from "../common/utils";
+import { invariant } from "../common/utils";
 
 export async function run(filename: string) {
   const contents = await fileToStringArray(import.meta.dir + "/" + filename);
