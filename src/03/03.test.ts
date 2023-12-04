@@ -12,12 +12,12 @@ describe("part 1", () => {
   });
 });
 
-// describe("part 2", () => {
-//   test("sample data", async () => {
-//     expect(await run2("sample1.txt")).toBe(2286);
-//   });
+describe("part 2", () => {
+  test("sample data", async () => {
+    expect(await run2("sample1.txt")).toBe(467835);
+  });
 
-//   test("real data", async () => {
-//     expect(await run2("real.txt")).toBe(63711);
-//   });
-// });
+  test("real data", async () => {
+    expect(await run2("real.txt")).toBe(89471771);
+  });
+});

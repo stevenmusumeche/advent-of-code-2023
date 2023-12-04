@@ -33,13 +33,6 @@ export function coordinateValue(grid: Grid<string>, coordinate: Coordinate) {
 export type Coordinate = { row: number; column: number };
 export type Grid<T> = T[][];
 
-export type RichGrid = RichCoordinate[][];
-
-export type RichCoordinate = {
-  coordinate: Coordinate;
-  value: string;
-  type: SymbolType;
-  toString: () => string;
-};
-
-export type SymbolType = "digit" | "symbol" | "empty";
+export function isDefined<T>(value: T | undefined | null): value is T {
+  return typeof value !== "undefined" && value !== null;
+}
