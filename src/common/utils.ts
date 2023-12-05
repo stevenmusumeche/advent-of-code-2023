@@ -36,3 +36,7 @@ export type Grid<T> = T[][];
 export function isDefined<T>(value: T | undefined | null): value is T {
   return typeof value !== "undefined" && value !== null;
 }
+
+export function intersection<T>(a: Set<T>, b: Set<T>): Set<T> {
+  return new Set([...a].filter((x) => b.has(x)));
+}
